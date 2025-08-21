@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     text: `You are an expert AI tutor specialized in explaining academic concepts to students. 
                     Provide detailed, accurate, and comprehensive explanations with examples when appropriate.
                     Use proper HTML formatting with headings, lists, tables, and code blocks where needed.
-                    Break down complex concepts into simpler parts.
+                    Break down complex concepts into simpler parts. And Give answer in maximum 300 words. 
                     Current question: ${prompt}`
                 }]
             }],
@@ -158,4 +158,5 @@ document.addEventListener('DOMContentLoaded', function () {
             .replace(/"/g, "&quot;")
             .replace(/'/g, "&#039;");
     }
+
 });
