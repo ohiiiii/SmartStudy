@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduSmart - Performance Risk Predictor</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="baseStyles.css">
+    <!-- Tesseract.js for OCR -->
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="index.html">Smart Study - AI Performance Analyzer</a></h1>
+            <p>Performance Risk Predictor</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="risk-container">
+            <section class="input-section" id="input-section">
+                <h2>Analyze Student Performance</h2>
+                <p>Upload marksheet image or enter marks manually to predict performance risks</p>
+                
+                <div class="input-options">
+                    <div class="option-card active" id="upload-option">
+                        <h3>Upload Marksheet</h3>
+                        <p>Upload an image of your marksheet for automatic analysis</p>
+                        <div class="upload-area" id="upload-area">
+                            <input type="file" id="image-upload" accept="image/*">
+                            <label for="image-upload" class="upload-label">
+                                <span class="material-icons">image</span>
+                                <span>Choose Image</span>
+                            </label>
+                            <p class="file-info" id="file-info">No file selected</p>
+                        </div>
+                    </div>
+                    
+                    <div class="option-divider">
+                        <span>OR</span>
+                    </div>
+                    
+                    <div class="option-card" id="manual-option">
+                        <h3>Enter Marks Manually</h3>
+                        <p>Enter your subject-wise marks for analysis</p>
+                        <button id="manual-entry-btn" class="btn-secondary">Enter Marks</button>
+                    </div>
+                </div>
+                
+                <div id="loading-indicator" class="loading-indicator hidden">
+                    <div class="spinner"></div>
+                    <p>Analyzing your marksheet...</p>
+                </div>
+            </section>
+            
+            <section class="manual-entry-section hidden" id="manual-entry-section">
+                <h2>Enter Subject Details</h2>
+                <div id="subjects-container">
+                    <div class="subject-entry">
+                        <div class="form-group">
+                            <label>Subject Name</label>
+                            <input type="text" class="subject-name" placeholder="e.g., Mathematics">
+                        </div>
+                        <div class="form-group">
+                            <label>Marks Obtained</label>
+                            <input type="number" class="marks-obtained" placeholder="Your marks">
+                        </div>
+                        <div class="form-group">
+                            <label>Total Marks</label>
+                            <input type="number" class="total-marks" placeholder="Full marks">
+                        </div>
+                        <div class="form-group">
+                            <label>Passing Marks</label>
+                            <input type="number" class="passing-marks" placeholder="Pass marks">
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="add-subject" class="btn-secondary">+ Add Another Subject</button>
+                <button id="analyze-manual" class="btn-primary">Analyze Performance</button>
+                <button id="back-to-options" class="btn-text">← Back to options</button>
+            </section>
+            
+            <section class="results-section hidden" id="results-section">
+                <h2>Performance Analysis Report</h2>
+                
+                <div class="performance-summary">
+                    <h3>Overall Performance</h3>
+                    <div class="summary-cards" id="summary-cards">
+                        <!-- Will be populated by JS -->
+                    </div>
+                </div>
+                
+                <div class="subject-performance">
+                    <h3>Subject-wise Analysis</h3>
+                    <div class="performance-table" id="performance-table">
+                        <!-- Will be populated by JS -->
+                    </div>
+                </div>
+                
+                <div class="risk-visualizations">
+                    <h3>Performance Visualization</h3>
+                    <div class="chart-container">
+                        <canvas id="performance-chart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="recommendations">
+                    <h3>Recommendations & Improvement Plan</h3>
+                    <div id="recommendations-list">
+                        <!-- Will be populated by JS -->
+                    </div>
+                </div>
+                
+                <button id="new-analysis" class="btn-primary">Perform New Analysis</button>
+            </section>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 EduSmart. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Chart.js for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

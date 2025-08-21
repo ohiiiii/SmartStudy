@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduSmart - AI Assessment Tools</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="baseStyle.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="index.html">Smart Study - AI Test Generator</a></h1>
+            <p>AI-Powered Assessment Tools</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="assessment-container">
+            <section class="test-config">
+                <h2>Configure Your Test</h2>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <select id="subject">
+                        <option value="mathematics">Mathematics</option>
+                        <option value="science">Science</option>
+                        <option value="history">History</option>
+                        <option value="english">English</option>
+                        <option value="computer_science">Computer Science</option>
+                        <option value="physics">Physics</option>
+                        <option value="biology">Biology</option>
+                        <option value="chemistry">Chemistry</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="topic">Topic:</label>
+                    <input type="text" id="topic" placeholder="Enter specific topic (e.g., Algebra, World War II)">
+                </div>
+                
+                <div class="form-group">
+                    <label for="difficulty">Difficulty Level:</label>
+                    <select id="difficulty">
+                        <option value="easy">Easy</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Question Types:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="question-type" value="mcq" checked> Multiple Choice</label>
+                        <label><input type="checkbox" name="question-type" value="short_answer"> Short Answer</label>
+                        <label><input type="checkbox" name="question-type" value="true_false"> True/False</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="question-count">Number of Questions:</label>
+                    <input type="number" id="question-count" min="3" max="20" value="5">
+                </div>
+                
+                <div id="loading-indicator" class="loading-indicator hidden">
+                    <div class="spinner"></div>
+                    <p>Generating your test questions...</p>
+                </div>
+                
+                <button id="generate-btn" class="btn-primary">Generate Test</button>
+            </section>
+            
+            <section class="test-area hidden" id="test-area">
+                <div class="test-header">
+                    <h2 id="test-title">Test</h2>
+                    <div id="timer">Time: 00:00</div>
+                </div>
+                <div id="questions-container">
+                    <!-- Questions will be inserted here -->
+                </div>
+                <button id="submit-test" class="btn-primary">Submit Test</button>
+            </section>
+            
+            <section class="results-area hidden" id="results-area">
+                <h2>Test Results</h2>
+                <div id="results-summary"></div>
+                <div id="results-container">
+                    <!-- Results will be inserted here -->
+                </div>
+                <div class="results-actions">
+                    <button id="new-test" class="btn-primary">Create New Test</button>
+                    <button id="review-test" class="btn-secondary">Review Answers</button>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 EduSmart AI. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

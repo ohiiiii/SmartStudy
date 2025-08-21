@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tutor Chatbot</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <header style="width: 100%; background-color: #3498db; color: white; padding: 40px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center;">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h1 style="margin-bottom: 5px; font-family: 'Poppins', sans-serif;">
+                    <a href="#" style="color: white; text-decoration: none;">Smart Study - AI TUTOR</a>
+                </h1>
+                <p style="font-size: 1.1rem; opacity: 0.9;">Your intelligent education companion</p>
+            </div>
+        </header>
+
+        <!-- Your chatbot section -->
+        <div class="container">
+            <!-- Chat Container -->
+            <div class="chat-container">
+                <div class="chat-header">
+                    <h1>AI Tutor</h1>
+                    <p>Ask me anything about your subjects</p>
+                </div>
+                
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message bot">
+                        <p>Hello! I'm your AI tutor. What subject or concept would you like to learn about today?</p>
+                    </div>
+                </div>
+                
+                <div class="typing-indicator" id="typing-indicator">
+                    <div class="typing-dots">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                    <p>AI tutor is thinking...</p>
+                </div>
+                
+                <div class="chat-input">
+                    <input type="text" id="user-input" placeholder="Type your question..." autocomplete="off">
+                    <button id="send-btn">
+                        <span class="material-symbols-rounded">send</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <footer style="background-color: #2c3e50; color: white; text-align: center; padding: 15px 0; position: fixed; bottom: 0; left: 0; width: 100%;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <p>&copy; 2023 EduSmart. All rights reserved.</p>
+    </div>
+</footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
